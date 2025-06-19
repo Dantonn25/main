@@ -1,15 +1,26 @@
-def build_prompt(name, birth_info, zodiac, chunks):
+from datetime import date
+
+def build_prompt(name, birth_info, zodiac, chunks, language="en"):
+    today = date.today().strftime("%B %d, %Y")
     context = "\n".join([chunk for chunk, _ in chunks])
+
     prompt = f"""
-You are a Vedic astrologer generating personalized advice.
+You are an astrologer generating short, personalized daily astrological insights for users based on their birth information and zodiac sign.
 
-User: {name}
-DOB Info: {birth_info}
-Zodiac: {zodiac}
+Instructions:
+- The insight should be 1–2 sentences long, clear, and concise.
+- Keep the tone supportive, focused, and relevant to the zodiac’s personality.
+- Today is {today}.
 
-Astrological Context:
+User Details:
+- Name: {name}
+- Birth Info: {birth_info}
+- Zodiac: {zodiac}
+
+Astrological Context Knowledge:
 {context}
 
-Insight:
+Now, answer the question: "How will {name}'s day go today?".
 """
-    return prompt
+
+    return prompt.strip()
