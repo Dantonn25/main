@@ -63,7 +63,9 @@ The prompt is passed to an LLM (via call_ollama function), which returns a short
 ├── requirements.txt
 └── README.md
 ## CLI Interface
-python main.py
+1)pip install -r requirements.txt
+
+2)python main.py
 
 ##Sample Output
 Jason
