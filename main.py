@@ -1,4 +1,3 @@
-pip install -r requirements.txt
 from zodiac import get_zodiac_sign
 from retriever import retrieve_chunks
 from prompt_builder import build_prompt
