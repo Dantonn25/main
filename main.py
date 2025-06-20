@@ -20,10 +20,10 @@ def get_insight(name, birth_date, birth_time, birth_place):
 if __name__ == "__main__":
     import sys
 
-    name = input("Enter your name: ")
-    birth_date = input("Enter birth date (YYYY-MM-DD): ")
-    birth_time = input("Enter birth time (HH:MM): ")
-    birth_place = input("Enter birth place: ")
+    name = input("Enter name: ")
+    birth_date = input("Enter birth date (YYYY-MM-DD): ").strip()
+    birth_time = input("Enter birth time (HH:MM): ").strip()
+    birth_place = input("Enter birth place: ").strip()
 
     result = get_insight(name, birth_date, birth_time, birth_place)
     print("\n Astrological Insight:")
