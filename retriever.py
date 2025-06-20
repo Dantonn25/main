@@ -14,13 +14,10 @@ with open("vector_store.pkl", "rb") as f:
     index, texts, metadata = pickle.load(f)
 
 def retrieve_chunks(query, top_k=3):
-    # Encode the query
     query_embedding = model.encode([query], convert_to_numpy=True)
-
-    # Perform FAISS similarity search
     distances, indices = index.search(query_embedding, top_k)
-
     results = []
     for idx in indices[0]:
         results.append((texts[idx], metadata[idx]))
     return results
+
